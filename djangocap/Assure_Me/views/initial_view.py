@@ -1,10 +1,6 @@
-# from django.contrib.auth import logout, login, authenticate
-# from django.contrib.auth.decorators import login_required
-# from django.http import HttpResponse, HttpResponseRedirect, Http404
-# from django.shortcuts import render
-# from django.template import RequestContext
-# from website.forms import UserForm, CustomerForm
+from django.shortcuts import render
+from django.template import RequestContext
 
-# def index(request):
-#     template_name = 'index.html'
-#     return render(request, template_name, {})
+def initial(request):
+    template_name = 'initial.html'
+    return render(request, template_name, {})
