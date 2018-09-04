@@ -1,0 +1,24 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Assure Me</title>
+</head>
+
+<body>
+  <h1>Welcome to Assure Me!</h1>
+    <div>
+        {% comment %}
+        <a href="{% url 'Assure_Me:login' %}">Login</a>
+        {% endcomment %}
+    </div>
+    <div>
+        {% comment %}
+        <a href="{% url 'Assure_Me:register' %}">Register</a>
+        {% endcomment %}
+    </div>
+</body>
+
+</html>
