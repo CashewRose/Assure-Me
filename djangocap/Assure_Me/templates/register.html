@@ -2,18 +2,18 @@
 <html>
 
 <head>
-    <title>Bangazon</title>
+    <title>Assure</title>
 </head>
 
 <body>
-    <h1>Register with Bangazon</h1>
+    <h1>Register with Assure Me</h1>
 
     <strong>Register here!</strong>
     <br />
 
     <form id="register_form" method="post" action="{% url 'Assure_Me:register' %}" enctype="multipart/form-data">
         {% comment %} This weird input hides the variable that holds a redirect path when the register form is submitted. {% endcomment %}
-        <input type="hidden" name="next" value="/"/>
+        <input type="hidden" name="next" value="/home"/>
         {% csrf_token %}
 
         <!-- Display each form. The as_p method wraps each element in a paragraph

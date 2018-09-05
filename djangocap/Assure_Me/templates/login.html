@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Assure Me</title>
+</head>
+
+<body>
+    <h1>Login to Assure Me</h1>
+    
+    {% if bad_login %}
+        <div>
+            <h3>Either your Username and/or Password is invalid</h3>
+            <p>Please try again:</p>
+        </div>
+    {% endif %}
+
+    <form id="login_form" method="post" action="{% url 'Assure_Me:login' %}">
+        {% comment %} This weird input hides the variable that holds a redirect path when the login form is submitted. {% endcomment %}
+        <input type="hidden" name="next" value="{{ next }}"/>
+        {% csrf_token %} Username:
+        <input type="text" name="username" value="" size="50" />
+        <br /> Password:
+        <input type="password" name="password" value="" size="50" />
+        <br />
+
+        <input type="submit" value="submit" />
+    </form>
+
+</body>
+
+</html>
