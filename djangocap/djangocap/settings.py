@@ -71,6 +71,10 @@ TEMPLATES = [
     },
 ]
 
+TEMPLATES_CONTEXT_PROCESSORS = (
+    'django.core.context_processors.static',
+)
+
 WSGI_APPLICATION = 'djangocap.wsgi.application'
 
 
