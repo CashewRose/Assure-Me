@@ -51,6 +51,8 @@ MIDDLEWARE = [
 
 AUTH_USER_MODEL = 'Assure_Me.User'
 
+LOGIN_URL='/login'
+
 ROOT_URLCONF = 'djangocap.urls'
 
 TEMPLATES = [
