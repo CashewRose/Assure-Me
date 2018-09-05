@@ -8,13 +8,14 @@
 </head>
 
 <body>
-  <h1>Welcome to Assure Me!</h1>
-    <div>
-        <a href="{% url 'Assure_Me:login' %}">Login</a>
-    </div>
-    <div>
-        <a href="{% url 'Assure_Me:register' %}">Register</a>
-    </div>
+    {% include "navbar.html" %}
+    <h1>Welcome to Assure Me!</h1>
+        <div>
+            <a href="{% url 'Assure_Me:login' %}">Login</a>
+        </div>
+        <div>
+            <a href="{% url 'Assure_Me:register' %}">Register</a>
+        </div>
 </body>
 
 </html>
