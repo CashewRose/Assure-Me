@@ -1,9 +1,5 @@
-from django.contrib.auth import logout, login, authenticate
-from django.contrib.auth.decorators import login_required
-from django.http import HttpResponse, HttpResponseRedirect, Http404
 from django.shortcuts import render
-from django.template import RequestContext
-from 
+from Assure_Me.forms import RegisterForm
 
 
 def register(request):
@@ -25,7 +21,7 @@ def register(request):
     if request.method == 'POST':
         register_form = RegisterForm(data=request.POST)
 
-        if user_form.is_valid():
+        if register_form.is_valid():
             # Save the user's form data to the database.
             user = register_form.save()
 
@@ -42,4 +38,4 @@ def register(request):
     elif request.method == 'GET':
         register_form = RegisterForm()
         template_name = 'register.html'
-        return render(request, template_name, {'register_form': register_form)
+        return render(request, template_name, {'register_form': register_form})
