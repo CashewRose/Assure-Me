@@ -11,10 +11,24 @@
   <h1>Welcome to your Assure Me Home Page!</h1>
   <h1>Hello {{ user.first_name }}!</h1>
 
-  {% block content %}
-
-  {% for latest_product in latest_products %}
-  {% endfor %} {% endblock %}
+  <div>
+    <h2>How To Effectively Use Assure Me:</h2>
+    <p>You must have at least one affirmation saved to recieve messages. Navigate to the affirmation page to write some! </p>
+    <p>In order to recieve your daily affirmation text message, you must add your phone number if you haven't already.</p>
+    <p>You must confirm your phone number in a text message in order to recieve your daily messages.</p>
+    <p>(If you need to do add or remove your phone number, go to the account information page!)</p>
+  </div>
+  <div>
+      {% comment %}
+      <a href="{% url 'Assure_Me:affirmations' %}">Affirmations</a>
+      {% endcomment %}
+  </div>
+  <div>
+      {% comment %}
+      <a href="{% url 'Assure_Me:account' %}">Account Information</a>
+      {% endcomment %}
+  </div>
+  
 </body>
 
 </html>
