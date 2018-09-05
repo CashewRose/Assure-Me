@@ -4,9 +4,9 @@ from django.template import RequestContext
 def initial(request):
     """This function gets the view to the initial.html template and returns it to the requester
     
-    Arguments:
-        None
-    
+    Method Arguments:
+        request -- The full HTTP request object
+        
     Author:
         Cashew Rose
     """

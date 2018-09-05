@@ -4,7 +4,7 @@
 
 Assure Me is an app that helps people with their depression. Reports show that daily affirmations help people with their confidence and self-esteem. Sometimes people just need a little bit of validation. Users are able to insert a few things they like about themselves or perhaps something positive others have told them. Once a day they will recieve a text message to turn their thinking around with a personal affirmation of themselves.
 
-## Live site at:
+## Live Site:
 
 ```
 ```
@@ -41,7 +41,7 @@ python manage.py makemigrations Assure_Me
 
 python manage.py migrate
 
-python runserver
+python manage.py runserver
 ```
 
 <em><strong>Congratulations! You should now have a working copy of this project! </strong></em>
