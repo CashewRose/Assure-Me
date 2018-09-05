@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from Assure_Me.forms import RegisterForm
+from .login_logout_view import login_user
 
 
 def register(request):
