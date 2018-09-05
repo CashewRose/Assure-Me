@@ -18,7 +18,7 @@ def login_user(request):
     context = RequestContext(request)
 
     # Stores the path the users were trying to get to originally if its different or takes them to the home screen
-    next = request.GET.get('next') or '/'
+    next = request.GET.get('next') or '/home'
     # If the request is a HTTP POST, try to pull out the relevant information.
     if request.method == 'POST':
 
@@ -34,8 +34,8 @@ def login_user(request):
 
         else:
             # Bad login details were provided. So we can't log the user in.
-            print("Invalid login details: {}, {}".format(username, password))
-            return HttpResponse("Invalid login details supplied.")
+            bad_login = True
+            return render(request, 'login.html', {'next': next, 'bad_login': bad_login})
     else:
             #Renders the page via the login.html template and stores the next variable
             return render(request, 'login.html', {'next': next})
