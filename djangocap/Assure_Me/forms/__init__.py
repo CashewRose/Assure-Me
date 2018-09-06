@@ -1,1 +1,2 @@
 from .registration_form import RegisterForm
+from .account_edit_form import AccountEditForm

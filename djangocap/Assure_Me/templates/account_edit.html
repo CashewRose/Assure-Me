@@ -1,0 +1,11 @@
+{% extends "account.html" %}
+
+{% block account %}
+<form method="post">
+    {% csrf_token %}
+
+    {{ user_form.as_p }}
+
+    <button type="submit">Update Information</button>
+</form>
+{% endblock %}
