@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from Assure_Me.forms import AccountEditForm
 
- 
+@login_required
 def account_edit_view(request):
 
     """This will give the users a form where they can update their account information. On submit it will update their account information and save it to the database. 
