@@ -13,9 +13,14 @@ def delete_affirmation_view(request, Affirmation_Id):
     Author:
         Cashew Rose
     '''
+
     try:
         affirmation = Affirmation.objects.get(pk=Affirmation_Id)
-        affirmation.delete()
+
+        # This makes sure only the owner of the affirmation can actually delete the instance of it
+        if request.user.id == affirmation.user_id:  
+            affirmation.delete()
+        
         return redirect('/affirmations')
 
     # Accounts for if there affirmation has already been deleted

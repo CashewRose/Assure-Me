@@ -17,7 +17,6 @@ def affirmations_view(request):
 
     try:
         affirmations = Affirmation.objects.filter(user=request.user.id)
-        print(affirmations)
         return render(request, "affirmations.html", {'affirmations': affirmations})
 
     # Accounts for if there are no current affirmations for that user
