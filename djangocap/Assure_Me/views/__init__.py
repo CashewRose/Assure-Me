@@ -6,3 +6,4 @@ from .account_view import account_view
 from .account_edit_view import account_edit_view
 from .affirmations_view import affirmations_view
 from .affirmation_new_view import new_affirmation_view
+from .affirmation_delete_view import delete_affirmation_view

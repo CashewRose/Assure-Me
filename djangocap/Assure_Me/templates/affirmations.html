@@ -1,7 +1,7 @@
+{% include "navbar.html"%}
 
 <h1>Affirmations</h1>
 
-{% include "navbar.html"%}
 <form id="affirmation_input" method="post" action="{% url 'Assure_Me:new_affirmation' %}">
     {% csrf_token %}
     <br /> Write A New Affirmation Here!
@@ -12,8 +12,9 @@
 {% if affirmations %}
 
 {% for affirmation in affirmations %}
-<div class="product">
+<div class="affirmation">
     <p> {{affirmation.affirmation}} </p>
+    <a href="{% url 'Assure_Me:delete_affirmation' Affirmation_Id=affirmation.id %}">Delete</a>
 </div>
 {% endfor %}
 
