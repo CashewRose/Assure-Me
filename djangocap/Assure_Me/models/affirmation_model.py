@@ -7,4 +7,3 @@ class Affirmation(models.Model):
         on_delete=models.CASCADE,
     )
     affirmation = models.CharField(max_length=500)
-    photo = models.CharField(max_length=9000000, blank=True, null=True)
