@@ -1,12 +1,22 @@
 
 <h1>Affirmations</h1>
 
+{% include "navbar.html"%}
+<form id="affirmation_input" method="post" action="{% url 'Assure_Me:affirmations' %}">
+    <br /> Write A New Affirmation Here!
+    <input type="text" name="New_Affirmation" value=""/>
+    <br />
+    <input type="submit" value="Write" />
+</form>
+
 {% if affirmations %}
 
-    {% for affirmation in affirmations %}
-        <div class="product">
-            <p> {{affirmation.affirmation}} </p>
-        </div>
-    {% endfor %}
+{% for affirmation in affirmations %}
+<div class="product">
+    <p> {{affirmation.affirmation}} </p>
+</div>
+{% endfor %}
 
 {% endif %}
+
+{% include "helpful_tips.html" %}

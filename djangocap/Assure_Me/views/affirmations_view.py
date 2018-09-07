@@ -10,5 +10,6 @@ def affirmations_view(request):
         affirmations = Affirmation.objects.filter(user=request.user.id)
         print(affirmations)
         return render(request, "affirmations.html", {'affirmations': affirmations})
+        
     except ObjectDoesNotExist:
         return render(request, "affirmations.html")
