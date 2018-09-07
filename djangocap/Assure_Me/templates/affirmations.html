@@ -1,8 +1,12 @@
 
 <h1>Affirmations</h1>
 
-{% for affirmation in affirmations %}
-<div class="product">
-  <p> {{affirmation.affirmation}} </p>
-</div>
-{% endfor %}
+{% if affirmations %}
+
+    {% for affirmation in affirmations %}
+        <div class="product">
+            <p> {{affirmation.affirmation}} </p>
+        </div>
+    {% endfor %}
+
+{% endif %}
