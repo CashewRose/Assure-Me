@@ -11,4 +11,5 @@ urlpatterns = [
     url(r'^home$', views.home_view, name='home'),
     url(r'^account$', views.account_view, name='account'),
     url(r'^account_edit$', views.account_edit_view, name='account_edit'),
+    url(r'^affirmations$', views.affirmations_view, name='affirmations'),
 ]
