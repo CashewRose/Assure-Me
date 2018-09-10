@@ -14,18 +14,19 @@
 
 {% for affirmation in affirmations %}
 <div id={{affirmation.affirmation}}>
+    
+    <form method="post" class="is_hidden edit_form" action="{% url 'Assure_Me:edit_affirmation' Affirmation_Id=affirmation.id %}">
+        {% csrf_token %} Affirmation:
+        <input type="text" name="affirmation" value='{{affirmation.affirmation}}'/>
+        
+        <input type="submit" class="affirmation_submit" value="Save Changes" />
+    </form>
+    
     <div class="affirmation">
         <p> {{affirmation.affirmation}} </p>
         <a href="{% url 'Assure_Me:delete_affirmation' Affirmation_Id=affirmation.id %}">Delete</a>
         <button class="edit_button" >Edit</button>
     </div>
-
-    <form method="post" action="{% url 'Assure_Me:edit_affirmation' Affirmation_Id=affirmation.id %}">
-        {% csrf_token %} Affirmation:
-        <input type="text" name="affirmation" value='{{affirmation.affirmation}}'/>
-
-        <input type="submit" class="affirmation_submit" value="Save Changes" />
-    </form>
 </div>
 {% endfor %}
 

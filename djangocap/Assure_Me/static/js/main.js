@@ -1,18 +1,17 @@
-console.log("Boop")
-
-forms = document.getElementsByClassName("affirmation_submit")
+forms = document.getElementsByClassName("edit_form")
 edit_button = document.getElementsByClassName("edit_button")
 
-Array.from(forms).forEach(function(form) {
-    form.parentNode.style.display = 'none';
-})
-
 Array.from(edit_button).forEach(function(edit) {
-    edit.parentElement.style.display = '';
     edit.addEventListener("click", function(){
         parent = edit.parentElement.parentElement;
-        edit.parentElement.style.display = 'none';
-        form = parent.children[1]
-        form.style.display = '';
+        Array.from(edit_button).forEach(function(edit) {
+            edit.parentElement.classList.remove("is_hidden");
+        })
+        edit.parentElement.classList.add("is_hidden");
+        Array.from(forms).forEach(function(form){
+            form.classList.add("is_hidden");
+        })
+        form = parent.children[0];
+        form.classList.remove("is_hidden");
     })
 })
