@@ -13,17 +13,20 @@
 {% if affirmations %}
 
 {% for affirmation in affirmations %}
-<div class="affirmation">
-    <p> {{affirmation.affirmation}} </p>
-    <a href="{% url 'Assure_Me:delete_affirmation' Affirmation_Id=affirmation.id %}">Delete</a>
-    <a href="{% url 'Assure_Me:edit_affirmation' Affirmation_Id=affirmation.id %}">Edit</a>
-</div>
-<form id='{{affirmation.id}}' method="post" action="{% url 'Assure_Me:edit_affirmation' Affirmation_Id=affirmation.id %}">
-    {% csrf_token %} Affirmation:
-    <input type="text" name="affirmation" value='{{affirmation.affirmation}}'/>
+<div id={{affirmation.affirmation}}>
+    <div class="affirmation">
+        <p> {{affirmation.affirmation}} </p>
+        <a href="{% url 'Assure_Me:delete_affirmation' Affirmation_Id=affirmation.id %}">Delete</a>
+        <button class="edit_button" >Edit</button>
+    </div>
 
-    <input type="submit" value="Save Changes" />
-</form>
+    <form method="post" action="{% url 'Assure_Me:edit_affirmation' Affirmation_Id=affirmation.id %}">
+        {% csrf_token %} Affirmation:
+        <input type="text" name="affirmation" value='{{affirmation.affirmation}}'/>
+
+        <input type="submit" class="affirmation_submit" value="Save Changes" />
+    </form>
+</div>
 {% endfor %}
 
 {% endif %}
