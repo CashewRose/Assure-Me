@@ -1,4 +1,5 @@
 {% include "navbar.html"%}
+{% load staticfiles %}
 
 <h1>Affirmations</h1>
 
@@ -15,9 +16,18 @@
 <div class="affirmation">
     <p> {{affirmation.affirmation}} </p>
     <a href="{% url 'Assure_Me:delete_affirmation' Affirmation_Id=affirmation.id %}">Delete</a>
+    <a href="{% url 'Assure_Me:edit_affirmation' Affirmation_Id=affirmation.id %}">Edit</a>
 </div>
+<form id='{{affirmation.id}}' method="post" action="{% url 'Assure_Me:edit_affirmation' Affirmation_Id=affirmation.id %}">
+    {% csrf_token %} Affirmation:
+    <input type="text" name="affirmation" value='{{affirmation.affirmation}}'/>
+
+    <input type="submit" value="Save Changes" />
+</form>
 {% endfor %}
 
 {% endif %}
 
 {% include "helpful_tips.html" %}
+
+<script src="{% static 'js/main.js' %}"></script>

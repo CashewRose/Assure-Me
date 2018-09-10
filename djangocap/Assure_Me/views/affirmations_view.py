@@ -6,7 +6,7 @@ from Assure_Me.models import Affirmation
 @login_required
 def affirmations_view(request):
     """This function gets the view to the affirmations.html template and returns it to the requester.
-        It filters and grabs all of the sepcific users affirmations and sends that to the template accordingly.
+        It filters and grabs all of the specific users affirmations and sends that to the template accordingly.
     
     Method Arguments:
         request -- The full HTTP request object
