@@ -18,7 +18,7 @@ def account_edit_view(request):
     if request.method == "POST":
         user_form = AccountEditForm(request.POST, instance=request.user)
 
-        ##Checks everything in both forms is filled out correctly and saves them with the new information. Sends them back to the main account page when finished.
+        ##Checks everything in forms is filled out correctly and saves them with the new information. Sends them back to the main account page when finished.
         if user_form.is_valid():
             user = user_form.save()
 
@@ -27,5 +27,5 @@ def account_edit_view(request):
     else: 
         formUser = AccountEditForm(instance=request.user)
 
-    ##Displays the page with the forms    
+    ##Displays the page with the form    
     return render(request, 'account_edit.html', {'user_form': formUser})

@@ -13,4 +13,6 @@ urlpatterns = [
     url(r'^account_edit$', views.account_edit_view, name='account_edit'),
     url(r'^affirmations$', views.affirmations_view, name='affirmations'),
     url(r'^affirmation_new$', views.new_affirmation_view, name='new_affirmation'),
+    url(r'^affirmation_delete/(?P<Affirmation_Id>\d+)$', views.delete_affirmation_view, name='delete_affirmation'),
+    url(r'^affirmation_edit/(?P<Affirmation_Id>\d+)$', views.edit_affirmation_view, name='edit_affirmation'),
 ]
