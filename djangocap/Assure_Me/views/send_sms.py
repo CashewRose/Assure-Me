@@ -1,9 +1,13 @@
 from twilio.rest import Client
+import os
+
+print(os.environ)
 
 def send_sms(num):
     # Your Account Sid and Auth Token from twilio.com/console
-    account_sid = 'AC518612d8e9a66805a2572eefa25e5767'
-    auth_token = 'e086659598367ab0b3fd84225379d8be'
+    account_sid = os.environ['TWILIO_ACCOUNT_SID']
+    auth_token = os.environ['TWILIO_AUTH_TOKEN']
+
     client = Client(account_sid, auth_token)
 
     number = '+1' + num

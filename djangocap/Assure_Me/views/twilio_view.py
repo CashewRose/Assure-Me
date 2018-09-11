@@ -3,10 +3,11 @@ from django.views.decorators.csrf import csrf_exempt
 
 from twilio.twiml.messaging_response import MessagingResponse
 from twilio.rest import Client
+import os
 
 
-account_sid = 'AC518612d8e9a66805a2572eefa25e5767'
-auth_token = 'e086659598367ab0b3fd84225379d8be'
+account_sid = os.environ['TWILIO_ACCOUNT_SID']
+auth_token = os.environ['TWILIO_AUTH_TOKEN']
 client = Client(account_sid, auth_token)
 
 @csrf_exempt
