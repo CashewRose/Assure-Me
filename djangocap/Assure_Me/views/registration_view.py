@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from Assure_Me.forms import RegisterForm
 from .login_logout_view import login_user
-
+from .send_sms import send_sms
 
 def register(request):
     '''Handles the creation of a new user for authentication
@@ -13,12 +13,12 @@ def register(request):
         Cashew Rose
     '''
 
-#     # A boolean value for telling the template whether the registration was successful.
-#     # Set to False initially. Code changes value to True when registration succeeds.
+    # A boolean value for telling the template whether the registration was successful.
+    # Set to False initially. Code changes value to True when registration succeeds.
     registered = False
 
-#     # Create a new user by invoking the `create_user` helper method
-#     # on Django's built-in User model
+    # Create a new user by invoking the `create_user` helper method
+    # on Django's built-in User model
     if request.method == 'POST':
         register_form = RegisterForm(data=request.POST)
 
@@ -30,6 +30,13 @@ def register(request):
             # Once hashed, we can update the user object.
             user.set_password(user.password)
             user.save()
+
+            # Checks if the field is empty, otherwise next code would throw an error
+            if user.phone_number != None:
+
+                # If the phone number field was input with a valid number and they dont have an active confirmation, it starts the confirmation process
+                if len(user.phone_number) == 10 and user.phone_number.isdigit():
+                    send_sms(user.phone_number)
 
             # Update our variable to tell the template registration was successful.
             registered = True
