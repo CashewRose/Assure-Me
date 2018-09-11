@@ -2,7 +2,6 @@ import os
 
 from twilio.rest import Client
 
-print(os.environ)
 
 def send_sms(num):
     """This sends an initial text message to start and setup the user for Assure Me.
