@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
+from .send_sms import send_sms
 from Assure_Me.forms import AccountEditForm
 
 @login_required
@@ -21,6 +22,9 @@ def account_edit_view(request):
         ##Checks everything in forms is filled out correctly and saves them with the new information. Sends them back to the main account page when finished.
         if user_form.is_valid():
             user = user_form.save()
+
+            if len(user.phone_number) == 10 and user.phone_number.isdigit() and user.confirmed == False:
+                send_sms(user.phone_number)
 
             return redirect('Assure_Me:account')
 

@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from Assure_Me.forms import RegisterForm
 from .login_logout_view import login_user
-
+from .send_sms import send_sms
 
 def register(request):
     '''Handles the creation of a new user for authentication
@@ -30,6 +30,11 @@ def register(request):
             # Once hashed, we can update the user object.
             user.set_password(user.password)
             user.save()
+            print(len(user.phone_number))
+            print(user.phone_number.isdigit())
+
+            if len(user.phone_number) == 10 and user.phone_number.isdigit():
+                send_sms(user.phone_number)
 
             # Update our variable to tell the template registration was successful.
             registered = True
