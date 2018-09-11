@@ -14,6 +14,10 @@ client = Client(account_sid, auth_token)
 def sms_response(request):
     # Start our TwiML response
     resp = MessagingResponse()
+    print(request.POST.get('Body').lower())
+    if request.POST.get('Body').lower() == 'confirm':
+        print('yup')
+        
     name = request.POST.get('Body', '')
 
     msg = f'Hey {name}, how are you today?'

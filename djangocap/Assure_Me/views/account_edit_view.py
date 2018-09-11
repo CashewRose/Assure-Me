@@ -29,18 +29,27 @@ def account_edit_view(request):
             user = user_form.save()
             if 'phone_number' in user_form.changed_data:
                 print(user.pk)
-                paste = User.objects.get(pk=user.pk)
-                paste.confirmed = True
-                paste.save()
 
-                paste.save()
-                if len(user.phone_number) == 10 and user.phone_number.isdigit() and user.confirmed == False:
-                    paste = User(confirmed=True, pk=user.pk)
-                    send_sms(user.phone_number)
-                    paste.save()
+                if user.phone_number != None:
+
+                    if len(user.phone_number) == 10 and user.phone_number.isdigit() and user.confirmed == False:
+                        send_sms(user.phone_number)
+
+                    elif user.confirmed == True and len(user.phone_number) == 10 and user.phone_number.isdigit():
+                        update_phone_status = User.objects.get(pk=user.pk)
+                        update_phone_status.confirmed = False
+                        update_phone_status.save()
+                        send_sms(user.phone_number)
+
+                    elif user.confirmed == True:
+                        update_phone_status = User.objects.get(pk=user.pk)
+                        update_phone_status.confirmed = False
+                        update_phone_status.save()
 
                 elif user.confirmed == True:
-                    user.confirmed
+                    update_phone_status = User.objects.get(pk=user.pk)
+                    update_phone_status.confirmed = False
+                    update_phone_status.save()
 
 
             return redirect('Assure_Me:account')
