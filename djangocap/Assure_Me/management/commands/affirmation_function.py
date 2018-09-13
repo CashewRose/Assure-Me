@@ -14,6 +14,13 @@ client = Client(account_sid, auth_token)
 
 class Command(BaseCommand):
 
+    """This command runs the function that send a text message to all users that are confirmed in the database. Each text message contains a random affirmation from the users affirmation collection.
+    No text message will be sent if there are no affirmations for the user or if the user has no confirmed phone number.
+
+    Author: 
+        Cashew Rose
+    """
+    
     def handle(self, *args, **options):
 
         affirm_users_to_send = User.objects.filter(confirmed=True)
@@ -32,7 +39,7 @@ class Command(BaseCommand):
                         )
                 print(f'{user.username} got this affirmation today: \"{todays_affirmation}\"')
             else:
-                print("This user hasn't put in any affirmations yet!")
+                print(f'{user.username} hasn\'t put in any affirmations yet!')
         else:
             print("No users to send messages to today!")
                         
