@@ -24,8 +24,9 @@ def sms_response(request):
     """
     # Start our TwiML response
     resp = MessagingResponse()
-    print(request.POST.get('Body').lower())
-    if request.POST.get('Body').lower() == 'confirm':
+    print(request.POST.get('Body'))
+    print(request.POST.get('Body').strip(" ./,0123456789 \" \' ").lower())
+    if request.POST.get('Body').strip(" ./,0123456789 \" \' ").lower() == 'confirm':
         print('yup')
         
     name = request.POST.get('Body', '')
