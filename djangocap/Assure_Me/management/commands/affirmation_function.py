@@ -23,12 +23,14 @@ class Command(BaseCommand):
                 affirm = Affirmation.objects.filter(user_id=user.id)
 
             if len(affirm) != 0:
+                todays_affirmation = random.choice(affirm).affirmation
                 message = client.messages \
                     .create(
-                            body=random.choice(affirm).affirmation,
+                            body=todays_affirmation,
                             from_='+16158662463',
                             to=number
                         )
+                print(f'{user.username} got this affirmation today: \"{todays_affirmation}\"')
             else:
                 print("This user hasn't put in any affirmations yet!")
         else:
