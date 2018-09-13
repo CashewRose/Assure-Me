@@ -3,6 +3,7 @@ import os
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 
+from Assure_Me.models import User
 from twilio.twiml.messaging_response import MessagingResponse
 from twilio.rest import Client
 
@@ -24,16 +25,15 @@ def sms_response(request):
     """
     # Start our TwiML response
     resp = MessagingResponse()
-    print(request.POST.get('Body'))
-    print(request.POST.get('Body').strip(" ./,0123456789 \" \' ").lower())
     if request.POST.get('Body').strip(" ./,0123456789 \" \' ").lower() == 'confirm':
-        print('yup')
-        
-    name = request.POST.get('Body', '')
+        number = request.POST.get('From', '')[2:]
+        user_to_confirm = User.objects.filter(phone_number=number)
+        user_to_confirm = user_to_confirm[0]
+        user_to_confirm.confirmed = True
+        user_to_confirm.save()
+        msg = f'Welcome!'
 
-    msg = f'Hey {name}, how are you today?'
-    
-    # Add a text message
-    msg = resp.message(msg)
+        # Add a text message
+        resp.message(msg)
 
-    return HttpResponse(str(resp))
+        return HttpResponse(str(resp))
