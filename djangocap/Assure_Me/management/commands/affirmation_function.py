@@ -31,6 +31,7 @@ class Command(BaseCommand):
 
             if len(affirm) != 0:
                 todays_affirmation = random.choice(affirm).affirmation
+                todays_affirmation = f'\"{todays_affirmation}\" --Affirmation provided by Assure Me. Reply with \'Stop!\' if you would like to cancel your daily texts.'
                 message = client.messages \
                     .create(
                             body=todays_affirmation,
