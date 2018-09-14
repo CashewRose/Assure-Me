@@ -7,6 +7,16 @@ from django.contrib.auth.decorators import login_required
 @login_required   
 def edit_affirmation_view(request, Affirmation_Id):
 
+    '''Handles editting an affirmation that the user has
+
+    Method arguments:
+        request -- The full HTTP request object
+        Affirmation_Id -- Affirmation's specific id that is being editted
+        
+    Author:
+        Cashew Rose
+    '''
+
     if request.method == "POST":
         try:
             affirm = Affirmation.objects.get(pk=Affirmation_Id)
