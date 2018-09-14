@@ -19,6 +19,7 @@ def sms_response(request):
         Confirm -- Adds a user as verified and begins the daily text message process.
         Stop! -- Removes a users confirmed status and their phone number from the database.
             (Twilio has auto stop commands that will prevent me from sending and unsubscribing the user if user)
+        (Anything inbetween)  -- Will add a response message with command options
     
     Method Arguments:
         request -- The full twilio request object
