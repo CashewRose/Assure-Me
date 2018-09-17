@@ -7,6 +7,7 @@ Assure Me is an app that helps people with their depression. Reports show that d
 ## Live Site:
 
 ```
+N/A
 ```
 
 ## Dependancies
@@ -21,11 +22,15 @@ To download a copy of this code for your own personal computer and get it runnin
 <strong><em>
 You must have the following installed:
 
-Python version 3.7
+python (Version 3.7)
 
-Django Version 2.1.1
+django (Version 2.1.1)
 
-if you do not, feel free to install them in a virtual environment for now
+twilio
+
+django-twilio
+
+If you do not, feel free to install them in a virtual environment for now
 
 
 </strong></em>
@@ -48,7 +53,7 @@ python manage.py runserver
 
 - If you would like to play around and make adjustments in the code open a new terminal tab or window and start your editor! 
 
-## Wirerame Representation: 
+## Wireframe Representation: 
 
 ```
 https://app.moqups.com/danieagnoletti@gmail.com/gvCwcMx1Q4/view
