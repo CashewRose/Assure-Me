@@ -58,8 +58,7 @@ def account_edit_view(request):
             return redirect('Assure_Me:account')
         else: 
 
-
-            ##Displays the page with the form    
+            ##Displays the page with the form from latestedit   
             return render(request, 'account_edit.html', {'user_form': user_form})
 
     else: 
