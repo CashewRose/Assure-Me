@@ -57,8 +57,13 @@ img {
     color: #B0BA8D
 }
 
+.Blurb {
+    text-align: center;
+    margin: 60px 80px 0 80px
+}
+
 .Initial_Buttons {
-    margin-top: 15%;
+    margin-top: 10%;
     display: flex;
     justify-content: space-evenly;
 }
