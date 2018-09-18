@@ -3,9 +3,9 @@
 {% block account %}
 <form method="post">
     {% csrf_token %}
-    <table>
+    <table class="table">
         {{ user_form.as_table }}
     </table>
-    <button type="submit">Update Information</button>
+    <button class="Account_Update_Button" type="submit">Update Information</button>
 </form>
 {% endblock %}

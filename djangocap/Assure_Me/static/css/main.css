@@ -11,6 +11,7 @@ a {
     text-decoration: none;
     color: #FBE178;
 }
+
 .is_hidden {
     display: none
 }
@@ -179,4 +180,67 @@ input {
     margin: 15px;
     padding: 5px;
     text-align: center
+}
+
+.Help_Tips_Edit {
+    width: 420px;
+    background: #F1E9D8;
+    color: #B0806A;
+    padding: 5px;
+    margin-right: 20px 
+}
+
+/* Account  */
+
+.Account {
+    display: flex;
+    justify-content: space-between;
+}
+
+.Edit_Block {
+    align-content: center;
+    width: 40%;
+}
+
+.padding {
+    padding-top: 10px
+}
+
+.Edit_Button {
+    border-radius: 10px; 
+    border-top: solid #FBE178 2.5px;
+    border-left: solid #FBE178 2.5px;
+    margin-top: 150px; 
+}
+
+/* Account Edit */
+
+.Account_Update_Button {
+    background:none;
+    font-size: 1.7rem;
+    font-family: 'Tangerine', cursive;
+    font-weight: 900;
+    color: #FBE178;
+    border:none; 
+    border-top: solid #FBE178 2.5px;
+    border-left: solid #FBE178 2.5px; 
+    cursor: pointer;
+    width: 160px;
+    margin-left: 120px;
+    margin-top: 30px 
+}
+
+.table label{
+    display: table-cell;
+    text-align: left;
+    padding-left: 10px;
+    padding-top: 5px 
+}
+
+.table input{
+    display: table-cell;
+    height: 30px;
+    width: 250px;
+    margin: 10px;
+    border-radius: 10px 
 }
