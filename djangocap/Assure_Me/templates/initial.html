@@ -9,11 +9,9 @@
 
 <body>
     {% include "navbar.html" %}
-    <h1>Welcome to Assure Me!</h1>
-        <div>
+    <h1 class="Header">Welcome to Assure Me!</h1>
+        <div class="Initial_Buttons">
             <a href="{% url 'Assure_Me:login' %}">Login</a>
-        </div>
-        <div>
             <a href="{% url 'Assure_Me:register' %}">Register</a>
         </div>
 </body>

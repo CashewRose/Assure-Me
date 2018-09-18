@@ -1,7 +1,7 @@
 {% include "navbar.html"%}
 {% load staticfiles %}
 
-<h1>Affirmations</h1>
+<h1 class="Header">Affirmations</h1>
 
 <form id="affirmation_input" method="post" action="{% url 'Assure_Me:new_affirmation' %}">
     {% csrf_token %}
