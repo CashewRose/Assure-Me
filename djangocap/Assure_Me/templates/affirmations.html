@@ -23,10 +23,10 @@
                 <input type="submit" class="affirmation_submit" value="Save Changes" />
             </form>
             
-            <div class="affirmation_solo">
+            <div class="affirmation_solo ">
                 <p> {{affirmation.affirmation}} </p>
                 <a class="affirmation_button" href="{% url 'Assure_Me:delete_affirmation' Affirmation_Id=affirmation.id %}">Delete</a>
-                <button class="affirmation_button" >Edit</button>
+                <button class="affirmation_button edit_button" >Edit</button>
             </div>
         </div>
         {% endfor %}

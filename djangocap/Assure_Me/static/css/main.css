@@ -1,3 +1,5 @@
+/* Basic Univeral Styles */
+
 body {
     background: #6C585B;
     font-family: 'Raleway', sans-serif;
@@ -10,10 +12,6 @@ a {
     font-size: 2.5rem;
     text-decoration: none;
     color: #FBE178;
-}
-
-.is_hidden {
-    display: none
 }
 
 img {
@@ -195,14 +193,12 @@ input {
     background: #F1E9D8;
     color: #B0806A;
     padding: 5px;
-    margin-right: 20px;
-    margin-left: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
     flex-grow: 1;
+    overflow: hidden;
 }
 
-.Help_Tips_Affirmation ul {
-    padding-bottom: 30px
-}
 /* Account  */
 
 .Account {
@@ -301,8 +297,6 @@ input {
     margin-bottom: auto
 }
 
-
-
 .All_Affirmation_Container {
     width: 100%;
     display: flex;
@@ -320,6 +314,7 @@ input {
     border-top: solid #FBE178 2.5px;
     border-left: solid #FBE178 2.5px; 
     overflow: auto;
+    margin-left: 10px;
     height: 600px;
 }
 
@@ -334,4 +329,12 @@ input {
     display: inline-block;
 }
 
+.edit_form {
+    margin-top: 20px;
+}
 
+/* JavaScript CSS */
+
+.is_hidden {
+    display: none
+}
