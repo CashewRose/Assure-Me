@@ -196,8 +196,12 @@ input {
     color: #B0806A;
     padding: 5px;
     margin-right: 20px;
+    margin-left: 20px;
     flex-grow: 1;
+}
 
+.Help_Tips_Affirmation ul {
+    padding-bottom: 30px
 }
 /* Account  */
 
@@ -294,6 +298,7 @@ input {
     margin-top: 0px;
     padding: 2.5px;
     margin: 2.5px;
+    margin-bottom: auto
 }
 
 
@@ -310,17 +315,23 @@ input {
     width: 60%;
     display: flex;
     flex-wrap: wrap;
-    overflow: auto;
     flex-grow: 5;
+    justify-content: space-around;
+    border-top: solid #FBE178 2.5px;
+    border-left: solid #FBE178 2.5px; 
+    overflow: auto;
+    height: 600px;
 }
 
 .affirmation {
     margin: 20px;
     text-align: center;
-    width: 25%
+    width: 25%;
+    margin-top: auto;
 }
 
 .affirmation_solo{
     display: inline-block;
-
 }
+
+
