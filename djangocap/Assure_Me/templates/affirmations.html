@@ -3,35 +3,38 @@
 
 <h1 class="Header">Affirmations</h1>
 
-<form id="affirmation_input" method="post" action="{% url 'Assure_Me:new_affirmation' %}">
+<form id="affirmation_form" method="post" action="{% url 'Assure_Me:new_affirmation' %}">
     {% csrf_token %}
-    <br /> Write A New Affirmation Here!
-    <input type="text" name="New_Affirmation" value=""/>
-    <input type="submit" value="Write" />
+    <h2>Write A New Affirmation Here!</h2>
+    <input class="Affirmation_Input" type="text" name="New_Affirmation" value=""/>
+    <input class="Submit_Affirmation"type="submit" value="Write" />
 </form>
 
 {% if affirmations %}
-
-{% for affirmation in affirmations %}
-<div id={{affirmation.affirmation}}>
-    
-    <form method="post" class="is_hidden edit_form" action="{% url 'Assure_Me:edit_affirmation' Affirmation_Id=affirmation.id %}">
-        {% csrf_token %} Affirmation:
-        <input type="text" name="affirmation" value='{{affirmation.affirmation}}'/>
-        
-        <input type="submit" class="affirmation_submit" value="Save Changes" />
-    </form>
-    
-    <div class="affirmation">
-        <p> {{affirmation.affirmation}} </p>
-        <a href="{% url 'Assure_Me:delete_affirmation' Affirmation_Id=affirmation.id %}">Delete</a>
-        <button class="edit_button" >Edit</button>
+<div class="All_Affirmation_Container">
+    <div class="Affirmation_List">
+        {% for affirmation in affirmations %}
+        <div class="affirmation" id={{affirmation.affirmation}}>
+            
+            <form method="post" class="is_hidden edit_form" action="{% url 'Assure_Me:edit_affirmation' Affirmation_Id=affirmation.id %}">
+                {% csrf_token %} Affirmation:
+                <input type="text" name="affirmation" value='{{affirmation.affirmation}}'/>
+                
+                <input type="submit" class="affirmation_submit" value="Save Changes" />
+            </form>
+            
+            <div class="affirmation_solo">
+                <p> {{affirmation.affirmation}} </p>
+                <a class="affirmation_button" href="{% url 'Assure_Me:delete_affirmation' Affirmation_Id=affirmation.id %}">Delete</a>
+                <button class="affirmation_button" >Edit</button>
+            </div>
+        </div>
+        {% endfor %}
     </div>
-</div>
-{% endfor %}
-
-{% endif %}
 
 {% include "helpful_tips.html" %}
+</div>
+{% endif %}
+
 
 <script src="{% static 'js/main.js' %}"></script>

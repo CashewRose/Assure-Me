@@ -190,6 +190,13 @@ input {
     margin-right: 20px 
 }
 
+.Help_Tips_Affirmation{
+    width: 30%;
+    background: #F1E9D8;
+    color: #B0806A;
+    padding: 5px;
+    margin-right: 20px 
+}
 /* Account  */
 
 .Account {
@@ -243,4 +250,72 @@ input {
     width: 250px;
     margin: 10px;
     border-radius: 10px 
+}
+
+/* Affirmations Page */
+
+
+#Affirmation_Form{
+    text-align: center
+}
+
+.Affirmation_Input {
+    width: 90%;
+    height: 45px;
+    font-size: 1.2rem;
+}
+
+.Submit_Affirmation {
+    background:none;
+    font-size: 1.8rem;
+    font-family: 'Tangerine', cursive;
+    font-weight: 900;
+    color: #FBE178;
+    border:none; 
+    border-top: solid #FBE178 2.5px;
+    border-left: solid #FBE178 2.5px; 
+    display: block;
+    cursor: pointer;
+    margin-left: 48%;
+    width: 60px
+}
+
+.affirmation_button {
+    background:none;
+    font-size: 1.8rem;
+    font-family: 'Tangerine', cursive;
+    font-weight: 900;
+    color: #FBE178;
+    border:none; 
+    cursor: pointer;
+    width: 60px;
+    margin-top: 0px;
+    padding: 2.5px;
+    margin: 2.5px;
+}
+
+
+
+.All_Affirmation_Container {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.Affirmation_List{
+    width: 60%;
+    display: flex;
+    flex-wrap: wrap
+}
+
+.affirmation {
+    margin: 20px;
+    text-align: center;
+    width: 25%
+}
+
+.affirmation_solo{
+    display: inline-block;
+
 }
