@@ -1,0 +1,11 @@
+#!/bin/bash
+set -e 
+
+pwd
+source ~/workspace/Assure_me/djangocap/.env
+source ~/workspace/Assure_me/djangocap/env/bin/activate 
+
+echo "activated"
+python ~/workspace/Assure_me/djangocap/manage.py affirmation_function
+
+echo "affirmation_function run"
