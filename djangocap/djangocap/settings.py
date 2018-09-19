@@ -54,6 +54,8 @@ AUTH_USER_MODEL = 'Assure_Me.User'
 
 LOGIN_URL='/login'
 
+CSRF_FAILURE_VIEW = 'Assure_Me.views.csrf_failure'
+
 ROOT_URLCONF = 'djangocap.urls'
 
 TEMPLATES = [

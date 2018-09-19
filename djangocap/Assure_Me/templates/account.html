@@ -7,20 +7,25 @@
   </head>
   <body>
     {% include "navbar.html" %}
-    
-    <h1>My Account</h1>
+    <h1 class="Header">My Account</h1>
 
-    {% block account %}
-    <h2>First name: {{ user.first_name }}</h2>
-    <h2>Last name: {{user.last_name}}</h2>
-    <h2>Email: {{ user.email }}</h2>
-    <h2>Phone Number: {{ user.phone_number }}</h2>
-    <h2>Account Created: {{ user.date_joined }}</h2>
-    
-    <a href="{%url 'Assure_Me:account_edit' %}">Edit Account</a>
-    {% endblock %}
+    <div class="Account">
+      
+      {% block account %}
+      <div class="Edit_Block">
+        <h2>First name: {{ user.first_name }}</h2>
+        <h2>Last name: {{user.last_name}}</h2>
+        <h2>Email: {{ user.email }}</h2>
+        <h2>Phone Number: {{ user.phone_number }}</h2>
+        <h2>Account Created: {{ user.date_joined }}</h2>
+        <div class="padding">
+          <a class="Edit_Button" href="{%url 'Assure_Me:account_edit' %}">Edit Account</a>
+        </div> 
+      </div>
+      {% endblock %}
 
-    {% include "helpful_tips.html" %}
+      {% include "helpful_tips.html" %}
+    </div>
 
 </body>
 </html>

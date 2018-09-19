@@ -56,6 +56,10 @@ def account_edit_view(request):
                     update_phone_status.save()
 
             return redirect('Assure_Me:account')
+        else: 
+
+            ##Displays the page with the form from latestedit   
+            return render(request, 'account_edit.html', {'user_form': user_form})
 
     else: 
         formUser = AccountEditForm(instance=request.user)

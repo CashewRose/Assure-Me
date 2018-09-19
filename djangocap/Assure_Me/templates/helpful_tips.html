@@ -1,7 +1,42 @@
-<div>
-    <h2>How To Effectively Use Assure Me:</h2>
-    <p>You must have at least one affirmation saved to recieve messages. Navigate to the affirmation page to write some! </p>
-    <p>In order to recieve your daily affirmation text message, you must add your phone number if you haven't already.</p>
-    <p>You must confirm your phone number in a text message in order to recieve your daily messages.</p>
-    <p>(If you need to do add or remove your phone number, go to the account information page!)</p>
-</div>
+
+{% if request.get_full_path == "/account" %}
+    <div class="Help_Tips_Edit">
+        <h2>How To Effectively Use Assure Me:</h2>
+        <p>You must have at least one affirmation saved to recieve messages. Navigate to the affirmation page to write some! </p>
+        <p>In order to recieve your daily affirmation text message, you must add your phone number if you haven't already.</p>
+        <p>You must confirm your phone number in a text message in order to recieve your daily messages.</p>
+        <p>(If you need to do add or remove your phone number, go to the account information page!)</p>
+    </div>
+{% elif request.get_full_path == "/account_edit" %}
+    <div class="Help_Tips_Edit">
+        <h2>How To Effectively Use Assure Me:</h2>
+        <p>You must have at least one affirmation saved to recieve messages. Navigate to the affirmation page to write some! </p>
+        <p>In order to recieve your daily affirmation text message, you must add your phone number if you haven't already.</p>
+        <p>You must confirm your phone number in a text message in order to recieve your daily messages.</p>
+        <p>(If you need to do add or remove your phone number, go to the account information page!)</p>
+    </div>
+{% elif request.get_full_path == "/home" %}
+    <div class="Help_Tips">
+        <h2>How To Effectively Use Assure Me:</h2>
+        <p>You must have at least one affirmation saved to recieve messages. Navigate to the affirmation page to write some! </p>
+        <p>In order to recieve your daily affirmation text message, you must add your phone number if you haven't already.</p>
+        <p>You must confirm your phone number in a text message in order to recieve your daily messages.</p>
+        <p>(If you need to do add or remove your phone number, go to the account information page!)</p>
+    </div>
+{% else %}
+    <div class="Help_Tips_Affirmation">
+        <h2>Helpful Tips To Writing An Affirmation:</h2>
+        <ul>
+            <li>Start with the words <em>"I am"</em></li>
+            <li>Use the present tense</li>
+            <li>Make it specific</li>
+            <li>Make affirmations for yourself</li>
+            <li>State it positively</li>
+        </ul>
+        <h2>How To Effectively Use Assure Me:</h2>
+        <p>You must have at least one affirmation saved to recieve messages. Navigate to the affirmation page to write some! </p>
+        <p>In order to recieve your daily affirmation text message, you must add your phone number if you haven't already.</p>
+        <p>You must confirm your phone number in a text message in order to recieve your daily messages.</p>
+        <p>(If you need to do add or remove your phone number, go to the account information page!)</p>
+    </div>
+{% endif %}
