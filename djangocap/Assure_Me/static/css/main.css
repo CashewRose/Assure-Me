@@ -195,7 +195,9 @@ input {
     background: #F1E9D8;
     color: #B0806A;
     padding: 5px;
-    margin-right: 20px 
+    margin-right: 20px;
+    flex-grow: 1;
+
 }
 /* Account  */
 
@@ -301,12 +303,15 @@ input {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    height: 100vh;
 }
 
 .Affirmation_List{
     width: 60%;
     display: flex;
-    flex-wrap: wrap
+    flex-wrap: wrap;
+    overflow: auto;
+    flex-grow: 5;
 }
 
 .affirmation {
