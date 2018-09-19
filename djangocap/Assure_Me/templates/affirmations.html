@@ -25,8 +25,10 @@
             
             <div class="affirmation_solo ">
                 <p> {{affirmation.affirmation}} </p>
-                <a class="affirmation_button" href="{% url 'Assure_Me:delete_affirmation' Affirmation_Id=affirmation.id %}">Delete</a>
-                <button class="affirmation_button edit_button" >Edit</button>
+                <div class="aff_b_container">
+                    <a class="affirmation_button" href="{% url 'Assure_Me:delete_affirmation' Affirmation_Id=affirmation.id %}">Delete</a>
+                    <button class="affirmation_button edit_button" >Edit</button>
+                </div>
             </div>
         </div>
         {% endfor %}

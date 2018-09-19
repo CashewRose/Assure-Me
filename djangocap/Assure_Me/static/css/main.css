@@ -282,6 +282,12 @@ input {
     width: 60px
 }
 
+.aff_b_container{
+    position: absolute;
+    bottom: 5px
+}
+
+
 .affirmation_button {
     background:none;
     font-size: 1.8rem;
@@ -294,7 +300,6 @@ input {
     margin-top: 0px;
     padding: 2.5px;
     margin: 2.5px;
-    margin-bottom: auto
 }
 
 .All_Affirmation_Container {
@@ -322,11 +327,15 @@ input {
     margin: 20px;
     text-align: center;
     width: 25%;
-    margin-top: auto;
+    height: 150px
 }
 
 .affirmation_solo{
     display: inline-block;
+    height: 150px;
+    position: relative;
+    min-width: 100%;
+    
 }
 
 .edit_form {

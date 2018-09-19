@@ -3,11 +3,13 @@ edit_button = document.getElementsByClassName("edit_button")
 
 Array.from(edit_button).forEach(function(edit) {
     edit.addEventListener("click", function(){
-        parent = edit.parentElement.parentElement;
+        parent = edit.parentElement.parentElement.parentElement;
         Array.from(edit_button).forEach(function(edit) {
             edit.parentElement.classList.remove("is_hidden");
+            edit.parentElement.parentElement.classList.remove("is_hidden");
         })
         edit.parentElement.classList.add("is_hidden");
+        edit.parentElement.parentElement.classList.add("is_hidden");
         Array.from(forms).forEach(function(form){
             form.classList.add("is_hidden");
         })
