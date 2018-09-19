@@ -9,11 +9,10 @@
 
 <body>
     {% include "navbar.html" %}
-    <h1>Welcome to Assure Me!</h1>
-        <div>
+    <h1 class="Header">Welcome to Assure Me!</h1>
+        <p class="Blurb">Assure Me is an app that helps people with their depression. Daily affirmations, or positive statements about yourself, help with confidence and self-esteem. Sometimes you just need a little bit of validation. It can be hard to remember to do daily, or just hard to remember niceties about yourself. Once a day you can receive a text message to turn your thinking around with a personal affirmation that you wrote for yourself.</p>
+        <div class="Initial_Buttons">
             <a href="{% url 'Assure_Me:login' %}">Login</a>
-        </div>
-        <div>
             <a href="{% url 'Assure_Me:register' %}">Register</a>
         </div>
 </body>
