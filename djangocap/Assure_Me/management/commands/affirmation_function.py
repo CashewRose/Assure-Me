@@ -29,18 +29,18 @@ class Command(BaseCommand):
                 number = '+1' + user.phone_number
                 affirm = Affirmation.objects.filter(user_id=user.id)
 
-            if len(affirm) != 0:
-                todays_affirmation = random.choice(affirm).affirmation
-                todays_affirmation = f'\"{todays_affirmation}\" --Affirmation provided by Assure Me. Reply with \'Stop!\' if you would like to cancel your daily texts.'
-                message = client.messages \
-                    .create(
-                            body=todays_affirmation,
-                            from_='+16158662463',
-                            to=number
-                        )
-                print(f'{user.username} got this affirmation today: \"{todays_affirmation}\"')
-            else:
-                print(f'{user.username} hasn\'t put in any affirmations yet!')
+                if len(affirm) != 0:
+                    todays_affirmation = random.choice(affirm).affirmation
+                    todays_affirmation = f'\"{todays_affirmation}\" --Affirmation provided by Assure Me. Reply with \'Stop!\' if you would like to cancel your daily texts.'
+                    message = client.messages \
+                        .create(
+                                body=todays_affirmation,
+                                from_='+16158662463',
+                                to=number
+                            )
+                    print(f'{user.username} got this affirmation today: \"{todays_affirmation}\"')
+                else:
+                    print(f'{user.username} hasn\'t put in any affirmations yet!')
         else:
             print("No users to send messages to today!")
                         
